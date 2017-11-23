@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>查询</title>
+</head>
+<body>
+success!!!
+<form id="login-form" th:action="@{/select}" th:object="${Test}" method="post">
+    <table>
+        <tr>
+            <td> <label>id:</label></td>
+            <td><input type="text" value="id" th:field="*{id}"></input></td>
+        </tr>
+    </table>
+    <input type="submit" value="go"/>
+</form>
+</body>
+</html>

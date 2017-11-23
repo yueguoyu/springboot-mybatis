@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul>
+        <li th:each="test:${LogList}">
+            <span th:text="${test.name}"></span>
+            <span th:text="${test.data}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
