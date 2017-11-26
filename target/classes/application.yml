@@ -20,13 +20,19 @@ spring:
                 testOnReturn: false
                 poolPreparedStatements: true
                 maxOpenPreparedStatements: 20
+        thymeleaf:
+          cache: false
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package:
 debug: true
 ##pagehelper分页插件
-#pagehelper:
+pagehelper:
 #    helperDialect: mysql
-#    reasonable: true
+    reasonable: true
 #    supportMethodsArguments: true
 #    params: count=countSql
+    offset-as-page-num: true
+    row-bounds-with-count: true
+#    dialect: mysql
+

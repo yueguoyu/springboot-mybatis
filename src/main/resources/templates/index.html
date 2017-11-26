@@ -1,26 +1,100 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="header">
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        .section-title{
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #row{
+            width: 1170px;
+            height: 142px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .under-heading{
+            font-size: 14px;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+        .from-control{
+            display: block;
+            width:95%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        }
+        .col-md-6{
+            width: 570px;
+            height: 183px;
+            position:relative;
+            left: 75px;
+            right: 98px;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            float: left;
+        }
+        body{
+            font-size: 14px;
+            line-height: 1.42;
+            color: #333;
+        }
+        /*#section-wrapper{*/
+        /*margin-top: 60px;*/
+        /*text-align: center;*/
+        /*}*/
+    </style>
 </head>
 <body>
-<form id="login-form" th:action="@{/a}" th:object="${Test}" method="post">
-    <table>
-        <tr>
-            <td> <label>id:</label></td>
-            <td><input type="text" value="id" th:field="*{id}"></input></td>
-        </tr>
-        <tr>
-            <td> <label>username:</label></td>
-            <td><input type="text" value="name" th:field="*{name}"></input></td>
-        </tr>
-        <tr>
-            <td> <label>data:</label></td>
-            <td><input type="text" value="password" th:field="*{data}"/></td>
-        </tr>
-    </table>
-    <input type="submit" value="go"/>
-</form>
+<div id="row">
+    <div class="col-md-12" style="visibility: visible;animation-name: bounceInDown;">
+            <h2 class="section-title">增加信息</h2>
+            <p class="under-heading">Feel Free to text us</p>
+    </div>
+</div>
+<div id="section-wrapper">
+    <div class="container">
+        <form id="login-form" th:action="@{/a}" th:object="${Test}" method="post">
+            <div class="col-md-6" style="visibility: visible;animation-name: bounceInLeft; ">
+                <div class="from-group">
+                    <input class="from-control" type="text" placeholder="name" th:field="*{name}"/>
+                </div>
+                <div class="from-group">
+                    <input class="from-control" type="text" placeholder="password" th:field="*{data}"/>
+                </div>
+                <div class="from-group">
+                    <input class="from-control" type="text" placeholder="subjet" />
+                </div>
+            </div>
+            <div class="col-md-6" style="visibility: visible;animation-name: bounceInRigt; ">
+                <div class="from-group">
+                    <textarea class="from-control" placeholder="Your Message"></textarea>
+                </div>
+                <div class="from-group">
+                    <input type="submit" placeholder="SEND MESSAGE"/>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

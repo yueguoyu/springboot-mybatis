@@ -81,11 +81,18 @@ public interface TestMapper {
      * 删除
      * @param id
      */
-    void deletById(int id);
+    int deletById(int id);
 
     /**
      *修改
      * @param test
      */
     void updateBean(Test test);
+
+    /**
+     * 通过名字查询
+     * @param name
+     * @return
+     */
+    List<Test> selectByName(String name);
 }

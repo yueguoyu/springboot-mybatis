@@ -211,4 +211,15 @@
   <insert id="insertBean" parameterType="com.ygy.model.Test">
     insert INTO s1.test(id, name, data) VALUES (#{id},#{name},#{data})
   </insert>
+  <delete id="deletById" parameterType="int">
+    DELETE FROM s1.test WHERE id=#{id}
+  </delete>
+
+  <update id="updateBean" parameterType="com.ygy.model.Test">
+  update s1.test set data=#{data} WHERE name=#{name}
+  </update>
+
+  <select id="selectByName" parameterType="String" resultType="com.ygy.model.Test">
+    select s1.test.data from s1.test WHERE test.name=#{name}
+  </select>
 </mapper>

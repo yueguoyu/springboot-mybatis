@@ -6,14 +6,28 @@
 </head>
 <body>
 success!!!
-<form id="login-form" th:action="@{/select}" th:object="${Test}" method="post">
-    <table>
-        <tr>
-            <td> <label>id:</label></td>
-            <td><input type="text" value="id" th:field="*{id}"></input></td>
-        </tr>
-    </table>
-    <input type="submit" value="go"/>
-</form>
+<div>
+    <form id="login-form1" th:action="@{/select}" th:object="${Test}" method="post">
+        <table>
+            <tr>
+                <td> <label>id:</label></td>
+                <td><input type="text" value="id" th:field="*{id}"></input></td>
+            </tr>
+        </table>
+        <input type="submit" value="go"/>
+    </form>
+</div>
+<hr/>
+<div>
+    <form id="login-form2" th:action="@{/selectByName}" th:object="${Test}" method="post">
+        <table>
+            <tr>
+                <td> <label>name:</label></td>
+                <td><input type="text" value="name" th:field="*{name}"></input></td>
+            </tr>
+        </table>
+        <input type="submit" value="go"/>
+    </form>
+</div>
 </body>
 </html>

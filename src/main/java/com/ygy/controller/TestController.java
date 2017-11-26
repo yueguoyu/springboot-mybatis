@@ -1,5 +1,6 @@
 package com.ygy.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.ygy.model.Test;
 import com.ygy.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,13 @@ public class TestController {
     }
     @RequestMapping("/delete")
     public  String delete(@ModelAttribute(value = "Test")Test test, Model model){
-        
+          this.service.delete(test.getId());
+        return "select";
+    }
+    @RequestMapping("/selectByName")
+    public String selectByName(@ModelAttribute(value = "Test")Test test,Model model){
+         List<Test> list=this.service.SelectByName(test.getName());
+         model.addAttribute("LogList",list);
         return "select";
     }
 }
