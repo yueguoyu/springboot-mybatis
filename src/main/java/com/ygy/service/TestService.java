@@ -1,6 +1,9 @@
 package com.ygy.service;
 
 import com.ygy.model.Test;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,33 +16,40 @@ import java.util.List;
 public interface TestService {
     /**
      * 增加
+     *
      * @param test
      */
-    public void  add(Test test);
+
+    public void add(Test test);
 
     /**
      * 查询
+     *
      * @param id
      * @return
      */
-   public List<Test> select(int id);
+    public List<Test> select(int id);
 
     /**
      * 通过id删除
+     *
      * @param id
      */
-   public void delete(int id);
+    public void delete(int id);
 
     /**
-     *selectByName
+     * selectByName
+     *
      * @param name
      * @return
      */
-   public List<Test> SelectByName(String name);
+
+    public List<Test> SelectByName(String name);
 
     /**
      * update date by test
+     *
      * @param test
      */
-   public void update(Test test);
+    public void update(Test test);
 }

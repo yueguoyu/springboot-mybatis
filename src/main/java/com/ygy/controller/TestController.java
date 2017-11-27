@@ -21,7 +21,7 @@ public class TestController {
     private TestService service;
     @RequestMapping("/")
     public String con(@ModelAttribute(value = "Test") Test test) {
-        return "index";
+        return "main";
     }
     @RequestMapping("/a")
     public String addTest(@ModelAttribute(value = "Test")Test test){

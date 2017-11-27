@@ -25,6 +25,14 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true
+    cache-names: ygy
+    caches: ygy
+
+
+
 debug: true
 ##pagehelper分页插件
 pagehelper:
@@ -35,4 +43,3 @@ pagehelper:
     offset-as-page-num: true
     row-bounds-with-count: true
 #    dialect: mysql
-

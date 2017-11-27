@@ -3,8 +3,14 @@ package com.ygy;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
+/**
+ * @author ygy
+ * @date 2017/11/27
+ */
 @SpringBootApplication
+@EnableCaching
 @MapperScan("com.ygy.mapper")
 public class YgyApplication {
 
