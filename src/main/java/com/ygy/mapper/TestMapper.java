@@ -68,7 +68,7 @@ public interface TestMapper {
      * @param id
      * @return
      */
-    List<Test> selectById(int id);
+    Test selectById(int id);
 
     /**
      * 添加

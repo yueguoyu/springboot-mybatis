@@ -24,7 +24,7 @@ spring:
           cache: false
 mybatis:
   mapper-locations: classpath:mapping/*.xml
-  type-aliases-package:
+  type-aliases-package:   #包别名
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     cache-enabled: true

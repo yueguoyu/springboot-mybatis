@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,13 +24,15 @@ public class TestServiceImpl implements TestService{
 
     @Override
     @CachePut(value = "ygy")
+    //指定异常进行回滚
+    @Transactional(rollbackFor = {IllegalArgumentException.class})
     public void add(Test test) {
-        this.mapper.insertBean(test);
+            this.mapper.insertBean(test);
     }
 
     @Override
     @Cacheable(value = "ygy")
-    public List<Test> select(int id) {
+    public Test select(int id) {
         return this.mapper.selectById(id);
     }
 

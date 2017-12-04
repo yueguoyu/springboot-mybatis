@@ -28,7 +28,7 @@ public interface TestService {
      * @param id
      * @return
      */
-    public List<Test> select(int id);
+    public Test select(int id);
 
     /**
      * 通过id删除

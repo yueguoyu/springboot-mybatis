@@ -20,17 +20,26 @@ public class TestController {
     @Autowired
     private TestService service;
     @RequestMapping("/")
-    public String con(@ModelAttribute(value = "Test") Test test) {
-        return "main";
+    public String con(@ModelAttribute(value = "Test") Test test,Model model) {
+        model.addAttribute("msg","hahhha");
+        return "login";
+    }
+    @RequestMapping("/index")
+    public String index(@ModelAttribute(value = "Test") Test test) {
+        return "index";
     }
     @RequestMapping("/a")
     public String addTest(@ModelAttribute(value = "Test")Test test){
-        this.service.add(test);
+        try {
+            this.service.add(test);
+        }catch (Exception e){
+            return "index";
+        }
         return "success";
     }
     @RequestMapping("/select")
     public String selectTest(@ModelAttribute(value = "Test")Test test, Model model){
-        List<Test> list= this.service.select(test.getId());
+        Test list= this.service.select(test.getId());
         model.addAttribute("LogList",list);
         return "select";
     }

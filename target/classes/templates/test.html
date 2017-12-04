@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="text/html">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <title>left</title>
+    <style type="text/css">
+        ul{list-style-type:none;}
+        #tree a:link{text-decoration:none;}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".menu ul").css("display","none");
+            $(".menu a").on("click",function(){
+                $(this).next().toggle();
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="tree">
+    <ul class="menu">
+        <li><a href="#"><img src="../static/1.jpg" height="20px" width="20px"/>目录</a>
+            <ul>
+                <li><a href="#"><img src="../static/1.jpg" height="20px" width="20px"/>项目一</a>
+                    <ul>
+                        <li><a href="#">文档1</a></li>
+                        <li><a href="#">文档2</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">文档1</a></li>
+                        <li><a href="#">文档2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="../static/1.jpg" height="20px" width="20px"/>项目二</a>
+                    <ul>
+                        <li><a href="#">文档1</a></li>
+                        <li><a href="#">文档1</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="../static/1.jpg" height="20px" width="20px"/>项目三</a>
+                    <ul>
+                        <li><a href="#">文档1</a></li>
+                        <li><a href="#">文档1</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
